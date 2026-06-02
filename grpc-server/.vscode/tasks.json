@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build grpc-server",
+      "type": "dotnet",
+      "task": "build",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "build grpc-client",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceRoot:grpc-client}/grpc-client.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

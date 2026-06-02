@@ -1,0 +1,31 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "server",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build grpc-server", // using task from tasks.json
+      "program": "${workspaceRoot:grpc-server}/bin/Debug/net10.0/grpc-server",
+    },
+    {
+      "name": "client",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build grpc-client", // using built-in command
+      "program": "${workspaceRoot:grpc-client}/bin/Debug/net10.0/grpc-client",
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Both Projects",
+      "configurations": [
+        "server",
+        "client"
+      ]
+    }
+  ]
+}
